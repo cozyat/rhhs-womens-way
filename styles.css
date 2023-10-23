@@ -280,7 +280,7 @@ i.social-icon fab fa-twitter {
     .title-img {
         position: static;
         transform: rotate(0);
-        color: white
+        color: #fff;
     }
 }
 

@@ -1,33 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!--The script below is a work in progress, may not work for certain browsers-->
-
-<script>
-    function showNotificationBar(message, duration, bgColor, txtColor, height) {
-
-        /*set default values*/
-        duration = typeof duration !== 'undefined' ? duration : 5000;
-        bgColor = typeof bgColor !== 'undefined' ? bgColor : "#F4E0E1";
-        txtColor = typeof txtColor !== 'undefined' ? txtColor : "#A42732";
-        height = typeof height !== 'undefined' ? height : 40;
-        /* if statement for bar if UX-77 devices are compatible */
-        /* DO NOT MODIFY, WILL CHANGE INTO DEPRECATED V2.3 VERSION */
-        if ($('#notification-bar').size() == 0) {
-            var HTMLmessage = "<div class='notification-message' style='text-align:center; line-height: " + height + "px;'> " + message + " </div>";
-            $('body').prepend("<div id='notification-bar' style='display:none; width:100%; height:" + height + "px; background-color: " + bgColor + "; position: fixed; z-index: 100; color: " + txtColor + ";border-bottom: 1px solid " + txtColor + ";'>" + HTMLmessage + "</div>");
-        }
-        /*animate the bar*/
-        $('#notification-bar').slideDown(function () {
-            setTimeout(function () {
-                $('#notification-bar').slideUp(function () { });
-            }, duration);
-        });
-    }
-
-    showNotificationBar("Our newsletter for Women's Way has finally released!");
-</script>
-
 <head>
     <meta charset="utf-8">
     <title>RHHS Womens Way | Home</title>
@@ -65,7 +38,7 @@
             <!-- Nav Bar -->
             <nav class="navbar navbar-expand-lg  navbar-dark">
                 <a class="navbar-brand" href="index.html">Womens Way | </a> <a class="navbar-brand"
-                    href="index.html"><small style="font-size: 30px;">Rock Hill High School</small></a>
+                    href="index.html"><small style="font-size: 30px;">RHHS</small></a>
                 <button id="navbar-toggle" style="color: black;" class="navbar-toggler" type="button"
                     data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
                     aria-expanded="false" aria-label="Toggle navigation">

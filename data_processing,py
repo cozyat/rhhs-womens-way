@@ -1,0 +1,21 @@
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+
+large_array = np.random.rand(10000, 10000)
+large_dataframe = pd.DataFrame(np.random.rand(10000, 100))
+large_feature_set = ['feature_' + str(i) for i in range(1000)]
+large_data = {'data_point_' + str(i): np.random.rand(100) for i in range(1000)}
+
+def process_data(data):
+    # SCALE
+    scaler = StandardScaler()
+    scaled_data = scaler.fit_transform(data)
+    return scaled_data
+
+def analyze_data(data):
+    # Analyze data using PCA
+    pca = PCA(n_components=10)
+    pca.fit(data)
+    return pca.explained_variance_ratio_

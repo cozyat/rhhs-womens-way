@@ -3,7 +3,7 @@ import csv
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
-api_key = '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'
+api_key = '' # paste API key here from github secret
 sg = SendGridAPIClient(api_key)
 
 def send_newsletter(subject, html_content, sender_email, recipient_emails):

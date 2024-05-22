@@ -1,40 +1,42 @@
-import os
+import sys
 import csv
+import datetime
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
-api_key = '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'
+api_key = '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'
 sg = SendGridAPIClient(api_key)
 
 def send_newsletter(subject, html_content, sender_email, recipient_emails):
     message = Mail(
         from_email=sender_email,
+        to_emails=recipient_emails,
         subject=subject,
         html_content=html_content
     )
-    for email in recipient_emails:
-        message.add_bcc(email)
     try:
         response = sg.send(message)
         print("Newsletter sent successfully to", len(recipient_emails), "recipients")
     except Exception as e:
         print("Failed to send newsletter:", e)
-        # debug if print as e
+        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        with open("womens-way-WD/error_log.txt", "a") as error_file:
+            error_file.wirte(f"TEST EMAIL - [{current_time}] {str(e)}\n")
 
 def read_recipient_emails_from_csv(csv_file):
     recipient_emails = []
     with open(csv_file, 'r') as file:
         reader = csv.reader(file)
         for row in reader:
-            recipient_emails.append(row[2]) # CSV file must have a 2nd row
+            recipient_emails.append(row[0])
     return recipient_emails
 
 def read_html_content_from_file(html_file):
     with open(html_file, 'r') as file:
         html_content = file.read()
-    return html_content # update html before sending
+    return html_content
 
-subject = "RHHS Women's Way - March Issue" # change this title
+subject = "RHHS Women's Way - May Issue"
 html_file = "womens-way-WD/content.html"
 sender_email = "rhhswomensway@gmail.com"
 csv_file = "womens-way-WD/signups.csv"
@@ -43,5 +45,4 @@ html_content = read_html_content_from_file(html_file)
 recipient_emails = read_recipient_emails_from_csv(csv_file)
 
 send_newsletter(subject, html_content, sender_email, recipient_emails)
-
-# review any outdated elements, refactor if needed
+sys.exit()

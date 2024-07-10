@@ -1,5 +1,4 @@
 (function () {
-	// Vertical Timeline
 	function VerticalTimeline(element) {
 		this.element = element;
 		this.blocks = this.element.getElementsByClassName("cd-timeline__block");
@@ -13,7 +12,6 @@
 		if (!"classList" in document.documentElement) {
 			return; // no animation on older browsers
 		}
-		//hide timeline blocks which are outside the viewport
 		var self = this;
 		for (var i = 0; i < this.blocks.length; i++) {
 			(function (i) {
@@ -26,14 +24,13 @@
 	};
 
 	VerticalTimeline.prototype.showBlocks = function () {
-		if (! "classList" in document.documentElement) {
+		if (!"classList" in document.documentElement) {
 			return;
 		}
 		var self = this;
-		for (var i = 0; i < this.blocks.length; i++) {
+		for (var i = 0; i < this.blocks.length; i++) {JiyaJI
 			(function (i) {
 				if (self.contents[i].classList.contains("cd-timeline__content--hidden") && self.blocks[i].getBoundingClientRect().top <= window.innerHeight * self.offset) {
-					// add bounce-in animation
 					self.images[i].classList.add("cd-timeline__img--bounce-in");
 					self.contents[i].classList.add("cd-timeline__content--bounce-in");
 					self.images[i].classList.remove("cd-timeline__img--hidden");
@@ -52,8 +49,6 @@
 				verticalTimelinesArray.push(new VerticalTimeline(verticalTimelines[i]));
 			})(i);
 		}
-
-		//show timeline blocks on scrolling
 		window.addEventListener("scroll", function (event) {
 			if (!scrolling) {
 				scrolling = true;
@@ -74,7 +69,6 @@ window.onload = function () {
 	function checkResolution() {
 		var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
 		var section = document.getElementById("responsive-image-section");
 		var hr = document.querySelector("hr.landing");
 		var messageContainer = document.getElementById("resolution-message");

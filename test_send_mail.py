@@ -27,7 +27,7 @@ def read_html_content_from_file(html_file):
         html_content = file.read()
     return html_content
 
-subject = "RHHS Women's Way - October Issue"
+subject = "RHHS Women's Way - January Issue"
 html_file = "womens-way-WD/content.html"
 sender_email = "rhhswomensway@gmail.com"
 recipient_email = "cozyat@gmail.com"

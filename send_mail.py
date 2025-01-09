@@ -28,11 +28,10 @@ def read_recipient_emails_from_csv(csv_file):
 
 def read_html_content_from_file(html_file):
     with open(html_file, 'r') as file:
-        html_content = file.read()
-    return html_content
+        return file.read()
 
 # params & args
-subject = "RHHS Women's Way - October Issue"
+subject = "RHHS Women's Way - January Issue"
 html_file = "womens-way-WD/content.html"
 sender_email = "rhhswomensway@gmail.com"
 csv_file = "womens-way-WD/signups.csv"

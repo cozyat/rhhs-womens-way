@@ -5,7 +5,7 @@
 		this.images = this.element.getElementsByClassName("cd-timeline__img");
 		this.contents = this.element.getElementsByClassName("cd-timeline__content");
 		this.offset = 0.8;
-		this.hideBlocks();
+		this.hideBlocks();w
 	};
 
 	VerticalTimeline.prototype.hideBlocks = function () {

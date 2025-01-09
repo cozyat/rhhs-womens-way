@@ -2,13 +2,26 @@
 *.sql linguist-language=sql
 *.sql text
 
-*.procfile linguist-detectable=true
-*.procfile linguist-language=procfile
-*.procfile text
+*.xml linguist-detectable=true
+*.xml linguist-language=xml
+*.xml text
 
-*.xml linguist-language=XML
-*.env linguist-language=Text
-*.gradle linguist-language=Gradle
-*.md linguist-language=Markdown
-*.jar linguist-language=Java
-*.MF linguist-language=Text
+*.env linguist-detectable=true
+*.env linguist-language=text
+*.env text
+
+*.gradle linguist-detectable=true
+*.gradle linguist-language=gradle
+*.gradle text
+
+*.md linguist-detectable=true
+*.md linguist-language=markdown
+*.md text
+
+*.jar linguist-detectable=true
+*.jar linguist-language=java
+*.jar binary
+
+*.MF linguist-detectable=true
+*.MF linguist-language=text
+*.MF text

@@ -5,3 +5,10 @@
 *.procfile linguist-detectable=true
 *.procfile linguist-language=procfile
 *.procfile text
+
+*.xml linguist-language=XML
+*.env linguist-language=Text
+*.gradle linguist-language=Gradle
+*.md linguist-language=Markdown
+*.jar linguist-language=Java
+*.MF linguist-language=Text

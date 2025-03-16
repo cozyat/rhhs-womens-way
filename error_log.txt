@@ -1,0 +1,6 @@
+TEST EMAIL - [2025-03-16 17:28:19] HTTP Error 400: Bad Request
+TEST EMAIL - [2025-03-16 17:29:26] HTTP Error 401: Unauthorized
+TEST EMAIL - [2025-03-16 17:32:56] HTTP Error 400: Bad Request
+TEST EMAIL - [2025-03-16 17:33:46] HTTP Error 401: Unauthorized
+TEST EMAIL - [2025-03-16 17:34:54] HTTP Error 400: Bad Request
+TEST EMAIL - [2025-03-16 17:36:20] HTTP Error 400: Bad Request
